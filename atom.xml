@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>devving</title>
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://devving.com/"/>
   <updated>2017-06-25T08:45:58.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://devving.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Daniel Conde</name>
     
   </author>
   
@@ -17,8 +17,8 @@
   
   <entry>
     <title>SSH Public Key authentication to your Edison</title>
-    <link href="http://yoursite.com/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/"/>
-    <id>http://yoursite.com/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</id>
+    <link href="http://devving.com/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/"/>
+    <id>http://devving.com/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</id>
     <published>2017-06-25T08:43:38.000Z</published>
     <updated>2017-06-25T08:45:58.000Z</updated>
     
