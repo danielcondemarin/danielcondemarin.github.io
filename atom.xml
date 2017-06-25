@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://devving.com/"/>
+  <link href="https://danielcondemarin.github.io/"/>
   <updated>2017-06-25T08:45:58.000Z</updated>
-  <id>http://devving.com/</id>
+  <id>https://danielcondemarin.github.io/</id>
   
   <author>
     <name>Daniel Conde</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>SSH Public Key authentication to your Edison</title>
-    <link href="http://devving.com/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/"/>
-    <id>http://devving.com/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</id>
+    <link href="https://danielcondemarin.github.io/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/"/>
+    <id>https://danielcondemarin.github.io/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</id>
     <published>2017-06-25T08:43:38.000Z</published>
     <updated>2017-06-25T08:45:58.000Z</updated>
     
