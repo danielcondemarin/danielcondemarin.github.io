@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.devpanda.me/"/>
-  <updated>2017-06-26T22:08:35.000Z</updated>
+  <updated>2017-06-28T21:32:55.000Z</updated>
   <id>https://www.devpanda.me/</id>
   
   <author>
@@ -20,23 +20,28 @@
     <link href="https://www.devpanda.me/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/"/>
     <id>https://www.devpanda.me/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</id>
     <published>2017-06-25T08:43:38.000Z</published>
-    <updated>2017-06-26T22:08:35.000Z</updated>
+    <updated>2017-06-28T21:32:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>I believe the best developers are the laziest ones, those who <em>do more by doing less</em>. That includes not having to type in your password every time you want to login to your <strong>Intel Edison</strong>.</p>
 <p>If you have worked with <strong>*nix</strong> systems, you might be familiar with SSH Public Key authentication. If you don’t know what that is, I strongly recommend having a read of this <a href="http://blakesmith.me/2010/02/08/understanding-public-key-private-key-concepts.html" target="_blank" rel="external">article</a>, it is by far one of the best explanations I’ve seen. </p>
 <p>In a nutshell, we will be generating a private and a public key. Then we will copy ONLY the public key to the <strong>Edison</strong>. That way you will be able to login to the Edison automatically as long as you have the private key.</p>
-<p>Let’s start:</p>
-<ul>
-<li><p>Open a terminal:</p>
+<p>Let’s start, first open a terminal, then run the following commands:</p>
 <ol>
-<li><p>Generate private / public key pair via <a href="https://linux.die.net/man/1/ssh-keygen" target="_blank" rel="external">ssh-keygen</a> </p>
-<p><code>ssh-keygen -t rsa</code></p>
+<li><p>Generate private / public key pair via <a href="https://linux.die.net/man/1/ssh-keygen" target="_blank" rel="external">ssh-keygen</a>:</p>
+<p> <code>ssh-keygen -t rsa</code></p>
+<p> I named the key “<strong>edison_key</strong>“, but feel free to use your own name. When you’re prompted for the <strong>passphrase</strong> just press enter, to avoid creating one. It should all look like this:</p>
+<p> <img src="/images/ssh-keygen.png" alt=""></p>
+</li>
+<li><p>Copy the public key (<strong>edison_key.pub</strong>) to your intel edison:</p>
+<p> <code>cat /Users/daniel/.ssh/edison_key.pub | ssh root@192.168.0.10 &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys&quot;</code></p>
+<p> Make sure you replace <em>/Users/daniel/.ssh/edison_key.pub</em> with your own path. Also, I’m assuming the Edison is accessible via <strong>192.168.0.10</strong> with SSH enabled.</p>
+</li>
+<li><p>That’s it! Let’s connect now:</p>
+<p><code>ssh root@192.168.0.10 -i /Users/daniel/.ssh/edison_key</code></p>
+<p><img src="/images/login-via-pub.png" alt=""></p>
 </li>
 </ol>
-</li>
-</ul>
-<p>I named the key “my_key”, but feel free to use your own name. When you’re prompted for the <strong>passphrase</strong> just press enter, to avoid creating one. It should all look like this:</p>
-<p><img src="/images/ssh-keygen.png" alt=""></p>
+<p>Tip: If you want to avoid specifying the private key <em>… -i /Users/daniel/.ssh/edison_key</em>, just use the default name when generating the key on step <em>1</em>, which is id_rsa.</p>
 ]]></content>
     
     <summary type="html">
