@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.devpanda.me/"/>
-  <updated>2017-10-08T22:06:55.000Z</updated>
+  <updated>2017-10-08T22:11:15.000Z</updated>
   <id>https://www.devpanda.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://www.devpanda.me/2017/10/07/DNS-Blacklist-of-locations-countries-using-AWS-Route53/"/>
     <id>https://www.devpanda.me/2017/10/07/DNS-Blacklist-of-locations-countries-using-AWS-Route53/</id>
     <published>2017-10-07T13:41:25.000Z</published>
-    <updated>2017-10-08T22:06:55.000Z</updated>
+    <updated>2017-10-08T22:11:15.000Z</updated>
     
     <content type="html"><![CDATA[<p>Assumptions:</p>
 <p>Basic knowledge of AWS Route53</p>
@@ -38,10 +38,10 @@
 <p>But how do we test this is working correctly? It should be easy be using <code>dig</code> via your terminal. Just grab one of the nameservers for your domain, listed above, and run the following command :</p>
 <p><code>./bin/dig/dig @your-nameserver mywebsite.somedomain.co.uk +client=45.63.111.158/24</code></p>
 <p>Caveat : You will need a <a href="https://www.gsic.uva.es/~jnisigl/dig-edns-client-subnet.html" target="_blank" rel="external">patched version</a> of <code>dig</code> in order to use the <code>+client</code> option. This option allows you to tell the nameserver the user ip address, which then it uses to return an IP Address from your records, based on the estimated geolocation of the IP Address you passed. This mainly works thanks to the <a href="https://tools.ietf.org/html/rfc7871" target="_blank" rel="external">client subnet in DNS queries</a>. </p>
-<p><img src="http://res.cloudinary.com/danielcondemarin/image/upload/v1507499627/usdnsquery.png" alt="DNS Query with American IP Address"></p>
+<p><img src="http://res.cloudinary.com/danielcondemarin/image/upload/v1507500087/usdnsquery.png" alt="DNS Query with American IP Address"></p>
 <p>I used the IP Address <code>45.63.111.158</code> which is from an American DNS Server I’ve found here <a href="https://public-dns.info/" target="_blank" rel="external">https://public-dns.info/</a>. Make sure you look again for a different IP since this might change.</p>
 <p>Now, for the UK:</p>
-<p><img src="http://res.cloudinary.com/danielcondemarin/image/upload/v1507499627/ukdnsquery.png" alt="DNS Query with UK IP Address"></p>
+<p><img src="http://res.cloudinary.com/danielcondemarin/image/upload/v1507500087/ukdnsquery.png" alt="DNS Query with UK IP Address"></p>
 <p>That’s about it really, hope you found it interesting and give some real use to it.</p>
 ]]></content>
     
