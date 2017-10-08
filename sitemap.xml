@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.devpanda.me/2017/10/07/DNS-Blacklist-of-locations-countries-using-AWS-Route53/</loc>
+    
+    <lastmod>2017-10-08T22:06:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.devpanda.me/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</loc>
     
     <lastmod>2017-06-28T21:32:55.000Z</lastmod>
