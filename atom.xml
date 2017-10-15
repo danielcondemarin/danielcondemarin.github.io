@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.devpanda.me/"/>
-  <updated>2017-10-09T22:00:08.000Z</updated>
+  <updated>2017-10-15T14:16:03.000Z</updated>
   <id>https://www.devpanda.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://www.devpanda.me/2017/10/07/DNS-Blacklist-of-locations-countries-using-AWS-Route53/"/>
     <id>https://www.devpanda.me/2017/10/07/DNS-Blacklist-of-locations-countries-using-AWS-Route53/</id>
     <published>2017-10-07T13:41:25.000Z</published>
-    <updated>2017-10-09T22:00:08.000Z</updated>
+    <updated>2017-10-15T14:16:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>Assumptions:  Basic knowledge of AWS Route53</p>
 <p>DNS can be a powerful tool, more so if you are using AWS Route53 as your provider.</p>
@@ -51,6 +51,16 @@
     </summary>
     
     
+      <category term="Route53" scheme="https://www.devpanda.me/tags/Route53/"/>
+    
+      <category term="Geolocation" scheme="https://www.devpanda.me/tags/Geolocation/"/>
+    
+      <category term="AWS" scheme="https://www.devpanda.me/tags/AWS/"/>
+    
+      <category term="Client Subnet" scheme="https://www.devpanda.me/tags/Client-Subnet/"/>
+    
+      <category term="DNS Blacklist" scheme="https://www.devpanda.me/tags/DNS-Blacklist/"/>
+    
   </entry>
   
   <entry>
@@ -58,7 +68,7 @@
     <link href="https://www.devpanda.me/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/"/>
     <id>https://www.devpanda.me/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</id>
     <published>2017-06-25T08:43:38.000Z</published>
-    <updated>2017-06-28T21:32:55.000Z</updated>
+    <updated>2017-10-15T14:16:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>I believe the best developers are the laziest ones, those who <em>do more by doing less</em>. That includes not having to type in your password every time you want to login to your <strong>Intel Edison</strong>.</p>
 <p>If you have worked with <strong>*nix</strong> systems, you might be familiar with SSH Public Key authentication. If you don’t know what that is, I strongly recommend having a read of this <a href="http://blakesmith.me/2010/02/08/understanding-public-key-private-key-concepts.html" target="_blank" rel="external">article</a>, it is by far one of the best explanations I’ve seen. </p>
@@ -88,6 +98,10 @@
     
     </summary>
     
+    
+      <category term="Intel Edison" scheme="https://www.devpanda.me/tags/Intel-Edison/"/>
+    
+      <category term="SSH Public Key" scheme="https://www.devpanda.me/tags/SSH-Public-Key/"/>
     
   </entry>
   
