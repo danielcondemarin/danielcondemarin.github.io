@@ -1,28 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>d&#39; dev panda ヽ(￣(ｴ)￣)ﾉ</title>
-  
-  <link href="/atom.xml" rel="self"/>
-  
-  <link href="https://www.devpanda.me/"/>
-  <updated>2017-11-05T21:14:08.000Z</updated>
-  <id>https://www.devpanda.me/</id>
-  
-  <author>
-    <name>Daniel Conde</name>
-    
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>AWS CodePipeline - Integrating with TeamCity</title>
-    <link href="https://www.devpanda.me/2017/11/05/AWS-CodePipeline-Integrating-with-TeamCity/"/>
-    <id>https://www.devpanda.me/2017/11/05/AWS-CodePipeline-Integrating-with-TeamCity/</id>
-    <published>2017-11-05T21:14:08.000Z</published>
-    <updated>2017-11-05T21:14:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>AWS CodePipeline is an excellent tool for orchestrating your deployments in the cloud. It provides out of the box integration with  CI Providers such as CodeBuild, Jenkins and Solano CI.Other providers can be configured as well, like TeamCity, and that’s the aim of this post.</p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> AWS CodePipeline - Integrating with TeamCity · d' dev panda ヽ(￣(ｴ)￣)ﾉ</title><meta name="description" content="AWS CodePipeline - Integrating with TeamCity - Daniel Conde"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="https://www.devpanda.me/atom.xml" title="d' dev panda ヽ(￣(ｴ)￣)ﾉ"><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-107848675-1",'auto');ga('send','pageview');</script></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/images/logo.jpg" alt="logo"></a><a href="https://stackoverflow.com/users/954852/daniel" target="_blank" class="so-flair"><img src="https://stackoverflow.com/users/flair/954852.png?theme=clean" width="208" height="58" alt="profile for Daniel at Stack Overflow, Q&amp;amp;A for professional and enthusiast programmers" title="profile for Daniel at Stack Overflow, Q&amp;amp;A for professional and enthusiast programmers"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/danielcondemarin" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">AWS CodePipeline - Integrating with TeamCity</h1><div class="post-info">Nov 5, 2017</div><div class="post-content"><p>AWS CodePipeline is an excellent tool for orchestrating your deployments in the cloud. It provides out of the box integration with  CI Providers such as CodeBuild, Jenkins and Solano CI.Other providers can be configured as well, like TeamCity, and that’s the aim of this post.</p>
 <p>In order to understand the extensibility point in CodePipeline that allows to plugin a custom action like a TeamCity Build, read <a href="http://docs.aws.amazon.com/codepipeline/latest/userguide/actions-create-custom-action.html" target="_blank" rel="external">http://docs.aws.amazon.com/codepipeline/latest/userguide/actions-create-custom-action.html</a> which explains in depth custom action types in CodePipeline.</p>
 <p>We will be setting up a deployment pipeline to automate releases of a simple nodejs app hosted in GitHub. To provision the Pipeline, we will use CloudFormation, which means you can provision your deployment pipeline in an automated fashion. </p>
 <p>So, let’s start by creating our project folder, let’s call it <code>node-app-devops</code>. Next, create a directory inside the project called <code>templates</code>, which is where your cloud formation template will be, let’s name it <code>deployment-pipeline.yaml</code>.</p>
@@ -61,105 +37,12 @@
 <p>After the Stack is created, it will automatically trigger the CodePipeline which should all work as expected. </p>
 <p><img src="https://res.cloudinary.com/danielcondemarin/image/upload/v1509915396/AWS-CodePipeline-Integrating-with-TeamCity/codepipelinesuccess.png" alt="Pipeline Success"></p>
 <p>That is the end of this post, hope you enjoyed it, and is of good use in your devops toolbelt ;). All the sources for the demo can be found on the repo : <a href="https://github.com/danielcondemarin/node-app-devops" target="_blank" rel="external">https://github.com/danielcondemarin/node-app-devops</a>.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;AWS CodePipeline is an excellent tool for orchestrating your deployments in the cloud. It provides out of the box integration with  CI Pr
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>AWS Route53 - DNS Whitelisting using Geolocation Routing</title>
-    <link href="https://www.devpanda.me/2017/10/07/DNS-Blacklist-of-locations-countries-using-AWS-Route53/"/>
-    <id>https://www.devpanda.me/2017/10/07/DNS-Blacklist-of-locations-countries-using-AWS-Route53/</id>
-    <published>2017-10-07T13:41:25.000Z</published>
-    <updated>2017-10-15T14:16:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Assumptions:  Basic knowledge of AWS Route53</p>
-<p>DNS can be a powerful tool, more so if you are using AWS Route53 as your provider.</p>
-<p>In this post I will focus on how to use Route53’s <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html#routing-policy-geo" target="_blank" rel="external">Geolocation routing</a> as a whitelist / blacklist of users originating from around the world.</p>
-<p>So, let’s assume you only want users from the United Kingdom to access your website. This could be because all your customer base and operations are UK based, or maybe your application was DDoS’ed from various countries around the world, and you want to make sure any DNS query issued from this malicious Origin / IP is null routed.</p>
-<p>First, let’s go to Route53 and create our first record set :</p>
-<p><img src="https://res.cloudinary.com/danielcondemarin/image/upload/v1507497187/nullrouteset.png" alt="Null Route"></p>
-<p>Please note this will be our default route, which will resolve to the IP Address <a href="https://en.wikipedia.org/wiki/Null_route" target="_blank" rel="external">0.0.0.0</a>. So, whenever a user attempts to reach your website domain (i.e. mywebsite.somedomain.co.uk) Route53 will resolve that DNS Query to <code>0.0.0.0</code>, then your machine will attempt to reach the website via the IP 0.0.0.0 which obviously doesn’t exist and will fail.</p>
-<p>Let’s setup now the record for users originating from the UK and assume our webserver will be hosted on a server with IP <code>54.12.12.12</code> :</p>
-<p><img src="https://res.cloudinary.com/danielcondemarin/image/upload/v1507497187/ukrouteset.png" alt="UK Route"></p>
-<p>That should be it, the A records just created along with the domain NS records should be listed in your website Hosted Zone like this:</p>
-<p><img src="https://res.cloudinary.com/danielcondemarin/image/upload/v1507497187/hostedzone.png" alt="Hosted Zone"></p>
-<p>But how do we test this is working correctly? It should be easy be using <code>dig</code> via your terminal. Just grab one of the nameservers for your domain, listed above, and run the following command :</p>
-<p><code>./bin/dig/dig @your-nameserver mywebsite.somedomain.co.uk +client=45.63.111.158/24</code></p>
-<p>Caveat : You will need a <a href="https://www.gsic.uva.es/~jnisigl/dig-edns-client-subnet.html" target="_blank" rel="external">patched version</a> of <code>dig</code> in order to use the <code>+client</code> option. This option allows you to tell the nameserver the user ip address, which then it uses to return an IP Address from your records, based on the estimated geolocation of the IP Address you passed. This mainly works thanks to the <a href="https://tools.ietf.org/html/rfc7871" target="_blank" rel="external">client subnet in DNS queries</a>. </p>
-<p><img src="https://res.cloudinary.com/danielcondemarin/image/upload/v1507500087/usdnsquery.png" alt="DNS Query with American IP Address"></p>
-<p>I used the IP Address <code>45.63.111.158</code> which is from an American DNS Server I’ve found here <a href="https://public-dns.info/" target="_blank" rel="external">https://public-dns.info/</a>. Make sure you look again for a different IP since this might change.</p>
-<p>Now, for the UK:</p>
-<p><img src="https://res.cloudinary.com/danielcondemarin/image/upload/v1507500087/ukdnsquery.png" alt="DNS Query with UK IP Address"></p>
-<p>That’s about it really, hope you found it interesting and give some real use to it.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Assumptions:  Basic knowledge of AWS Route53&lt;/p&gt;
-&lt;p&gt;DNS can be a powerful tool, more so if you are using AWS Route53 as your provider.&lt;/p
-    
-    </summary>
-    
-    
-      <category term="Route53" scheme="https://www.devpanda.me/tags/Route53/"/>
-    
-      <category term="Geolocation" scheme="https://www.devpanda.me/tags/Geolocation/"/>
-    
-      <category term="AWS" scheme="https://www.devpanda.me/tags/AWS/"/>
-    
-      <category term="Client Subnet" scheme="https://www.devpanda.me/tags/Client-Subnet/"/>
-    
-      <category term="DNS Blacklist" scheme="https://www.devpanda.me/tags/DNS-Blacklist/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SSH Public Key authentication to your Edison</title>
-    <link href="https://www.devpanda.me/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/"/>
-    <id>https://www.devpanda.me/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</id>
-    <published>2017-06-25T08:43:38.000Z</published>
-    <updated>2017-10-15T14:16:38.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>I believe the best developers are the laziest ones, those who <em>do more by doing less</em>. That includes not having to type in your password every time you want to login to your <strong>Intel Edison</strong>.</p>
-<p>If you have worked with <strong>*nix</strong> systems, you might be familiar with SSH Public Key authentication. If you don’t know what that is, I strongly recommend having a read of this <a href="http://blakesmith.me/2010/02/08/understanding-public-key-private-key-concepts.html" target="_blank" rel="external">article</a>, it is by far one of the best explanations I’ve seen. </p>
-<p>In a nutshell, we will be generating a private and a public key. Then we will copy ONLY the public key to the <strong>Edison</strong>. That way you will be able to login to the Edison automatically as long as you have the private key.</p>
-<p>Let’s start, first open a terminal, then run the following commands:</p>
-<ol>
-<li><p>Generate private / public key pair via <a href="https://linux.die.net/man/1/ssh-keygen" target="_blank" rel="external">ssh-keygen</a>:</p>
-<p> <code>ssh-keygen -t rsa</code></p>
-<p> I named the key “<strong>edison_key</strong>“, but feel free to use your own name. When you’re prompted for the <strong>passphrase</strong> just press enter, to avoid creating one. It should all look like this:</p>
-<p> <img src="/images/ssh-keygen.png" alt=""></p>
-</li>
-<li><p>Copy the public key (<strong>edison_key.pub</strong>) to your intel edison:</p>
-<p> <code>cat /Users/daniel/.ssh/edison_key.pub | ssh root@192.168.0.10 &quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt;  ~/.ssh/authorized_keys&quot;</code></p>
-<p> Make sure you replace <em>/Users/daniel/.ssh/edison_key.pub</em> with your own path. Also, I’m assuming the Edison is accessible via <strong>192.168.0.10</strong> with SSH enabled.</p>
-</li>
-<li><p>That’s it! Let’s connect now:</p>
-<p><code>ssh root@192.168.0.10 -i /Users/daniel/.ssh/edison_key</code></p>
-<p><img src="/images/login-via-pub.png" alt=""></p>
-</li>
-</ol>
-<p>Tip: If you want to avoid specifying the private key <em>… -i /Users/daniel/.ssh/edison_key</em>, just use the default name when generating the key on step <em>1</em>, which is id_rsa.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;I believe the best developers are the laziest ones, those who &lt;em&gt;do more by doing less&lt;/em&gt;. That includes not having to type in your pa
-    
-    </summary>
-    
-    
-      <category term="Intel Edison" scheme="https://www.devpanda.me/tags/Intel-Edison/"/>
-    
-      <category term="SSH Public Key" scheme="https://www.devpanda.me/tags/SSH-Public-Key/"/>
-    
-  </entry>
-  
-</feed>
+</div></article></div></main><footer><div class="paginator"><a href="/2017/10/07/DNS-Blacklist-of-locations-countries-using-AWS-Route53/" class="next">NEXT</a></div><div id="disqus_thread"></div><script>var disqus_shortname = 'devpanda-me';
+var disqus_identifier = '2017/11/05/AWS-CodePipeline-Integrating-with-TeamCity/';
+var disqus_title = 'AWS CodePipeline - Integrating with TeamCity';
+var disqus_url = 'https://www.devpanda.me/2017/11/05/AWS-CodePipeline-Integrating-with-TeamCity/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//devpanda-me.disqus.com/count.js" async></script><div class="copyright"><p>© 2015 - 2017 <a href="https://www.devpanda.me">Daniel Conde</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script></body></html>

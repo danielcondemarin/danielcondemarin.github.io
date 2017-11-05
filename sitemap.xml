@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.devpanda.me/2017/11/05/AWS-CodePipeline-Integrating-with-TeamCity/</loc>
+    
+    <lastmod>2017-11-05T21:14:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.devpanda.me/2017/06/25/SSH-Public-Key-authentication-to-your-Edison/</loc>
     
     <lastmod>2017-10-15T14:16:38.000Z</lastmod>
