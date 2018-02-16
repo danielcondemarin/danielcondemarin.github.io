@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.devpanda.me/"/>
-  <updated>2017-11-05T22:00:37.000Z</updated>
+  <updated>2018-02-16T21:25:42.066Z</updated>
   <id>https://www.devpanda.me/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Simple Angular and React Hybrid App</title>
+    <link href="https://www.devpanda.me/2018/02/16/Simple-Angular-and-React-Hybrid-App/"/>
+    <id>https://www.devpanda.me/2018/02/16/Simple-Angular-and-React-Hybrid-App/</id>
+    <published>2018-02-16T21:25:42.000Z</published>
+    <updated>2018-02-16T21:25:42.066Z</updated>
+    
+    <content type="html"><![CDATA[<p>If you have worked with legacy apps, you know doing a big bang migration of one framework to another is not easy peasy!</p>
+<p>A bit of history:</p>
+<p>Once upon a time I had worked on a project to migrate our legacy Angular app to React.js. Basically we had 2 separate applications, one for our mobile website, built using angular, angular-router. And our desktop app, on React. After duplicating our estimates for each piece of work, having to do the same feature on both Angular and React, we decided to stick with one of them and make the whole site responsive. Our choice was to responsify our Desktop app built in React.<br>The idea is to somehow, get angular and React playing “nicely” together, so that you can start stripping off small sections from your legacy app and move it to React, rather than trying to migrate everything in one go, which is normally the recipe for disaster and an unhappy business.</p>
+<p>In this post I will give you a starting point for you to do this, using the power of webpack and ngReact.</p>
+<p>Show me the code!</p>
+<p>Let’s start with our legacy angular app. Suppose this is the html page you’re serving:</p>
+<script src="//gist.github.com/b1eb5e1d4916104a58200aa268224b81.js"></script>
+<p>Note we have the script tags for <code>angular</code> and <code>angular-router</code> and our app <code>angular-app</code>.<br>Let’s have a look now at the angular app:</p>
+<script src="//gist.github.com/b5c59b2294e6314935f596234e6e9f67.js"></script>
+<p>There is nothing particularly interesting so far. Just a simple app which will render <code>/legacy/templates/home.html</code> for the route <code>/#home</code>. This is the home template:</p>
+<script src="//gist.github.com/63c3a76d4837f9ba3ad3429865c96f3e.js"></script>
+<p>If we serve what we have so far :</p>
+<p><img src="https://res.cloudinary.com/danielcondemarin/image/upload/v1518813469/angular-react-hybrid-indexhtml_n6f3vm.png" alt="index.html"></p>
+<p>Now, let’s suppose we want to render a React component in the home page template. For that I’m going to use <code>ngReact</code>, which uses <code>react</code> and <code>react-dom</code> to render your React components.<br>Before we configure <code>ngReact</code> in our angular app, let’s say we have the following React component which we want to render:</p>
+<script src="//gist.github.com/7cd09185724dc418b824809c1955d719.js"></script>
+<p>Now, we will bundle our react app using webpack. The most IMPORTANT thing to note here is we need to EXPOSE in the window the React component, so that ngReact can actually see it and use it.</p>
+<p>This is the webpack.config:</p>
+<script src="//gist.github.com/eed36be54b42e6799f5e67989d830749.js"></script>
+<p>First, on our <code>entry</code>, note we are <strong>explicitly</strong> requiring <code>react-dom</code> and <code>ngReact</code>. If we don’t do this, webpack won’t include it in the bundle as these libraries are not used in the React app. Note we don’t do <code>ReactDOM.render ...</code> anywhere.<br>The second important part is the <code>output</code> where we have asked webpack: Can you expose in the <strong>root scope</strong>(that’s what <code>libraryTarget: &quot;var&quot;</code> means) a variable called <code>ReactEntry</code>?  This will allow you to access <code>DummyComponent</code> from the window: <code>window.ReactEntry.DummyComponent</code>.<br>Lastly, we use the plugin <code>expose-loader</code> to have the library ngReact on the window as well. Alternatively you could have ngReact on a script tag separately from your webpack bundle, but I prefer to have everything in one webpack config.</p>
+<p>Now, let’s configure ngReact. First, we need to add an extra dependency called ‘react’ to the angular module:</p>
+<p><code>var myApp = angular.module(&#39;myApp&#39;, [&#39;ngRoute&#39;, &#39;react&#39;]);</code></p>
+<p>Then set the component for ngReact to use like this:</p>
+<p><code>myApp.value(&#39;DummyComponent&#39;, window.ReactEntry.DummyComponent);</code></p>
+<p>With that done we can render DummyComponent in home.html using a custom directive provided by ngReact:</p>
+<p><react-component name="DummyComponent"></react-component></p>
+<p>And this is what the final product looks like:</p>
+<p><img src="https://res.cloudinary.com/danielcondemarin/image/upload/v1518816097/react-hybrid-final_bu4uoq.png" alt="index.html"></p>
+<p>There is a repo on github with all the code, <a href="https://github.com/danielcondemarin/angular-react-hybrid" target="_blank" rel="external">https://github.com/danielcondemarin/angular-react-hybrid</a>.</p>
+<p>Feel free to comment below if you have any questions :)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;If you have worked with legacy apps, you know doing a big bang migration of one framework to another is not easy peasy!&lt;/p&gt;
+&lt;p&gt;A bit of h
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>AWS CodePipeline - Integrating with TeamCity</title>
