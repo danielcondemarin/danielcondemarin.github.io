@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.devpanda.me/2018/02/16/Simple-Angular-and-React-Hybrid-App/</loc>
+    <loc>https://www.devpanda.me/2018/05/26/Alexa-Go-Local/</loc>
     
-    <lastmod>2018-02-17T19:20:26.000Z</lastmod>
+    <lastmod>2018-05-26T15:00:29.002Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://www.devpanda.me/2017/11/05/AWS-CodePipeline-Integrating-with-TeamCity/</loc>
     
-    <lastmod>2017-11-05T22:00:37.000Z</lastmod>
+    <lastmod>2018-05-26T14:59:55.910Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.devpanda.me/2018/02/16/Simple-Angular-and-React-Hybrid-App/</loc>
+    
+    <lastmod>2018-02-17T19:20:26.000Z</lastmod>
     
   </url>
   
